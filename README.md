@@ -1,6 +1,6 @@
 # GMOD-Launcher
 
-GMOD-Launcher is a bash script that permit to quickly create a Garry's Mod server as a deamon on a UNIX dedicated server with basic options.
+GMOD-Launcher is a bash script that permit to quickly create a Garry's Mod server in a screen daemon on a UNIX dedicated server with basic options.
 
 ## Requirements
 
