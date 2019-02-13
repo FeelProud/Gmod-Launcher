@@ -3,7 +3,12 @@
 ################### Setup your default config here ###################
 
 # API KEY for Steam
+
 authkey=""
+
+# Default Gamemode
+
+defaultgamemode="sandbox"
 
 ####### Murder Config ################################################
 
@@ -62,8 +67,8 @@ else
 		echo '================================================================================'
 		echo '         ___ __  __  ___  ___    _      _  _   _ _  _  ___ _  _ ___ ___ '
 		echo '        / __|  \/  |/ _ \|   \  | |    /_\| | | | \| |/ __| || | __| _ \'
- 		echo '       | (_ | |\/| | (_) | |) | | |__ / _ \ |_| | .` | (__| __ | _||   /'
-  		echo '        \___|_|  |_|\___/|___/  |____/_/ \_\___/|_|\_|\___|_||_|___|_|_\'                                                           
+		echo '       | (_ | |\/| | (_) | |) | | |__ / _ \ |_| | .` | (__| __ | _||   /'
+		echo '        \___|_|  |_|\___/|___/  |____/_/ \_\___/|_|\_|\___|_||_|___|_|_\'                                                           
 		echo '================================================================================'
 		echo ''
 		echo ''
@@ -72,12 +77,12 @@ else
 		ls $HOME/steamcmd/gmod/garrysmod/gamemodes
 		echo ''
 		echo ''
-		printf "Gamemode choice [default : murder]:	"
+		printf "Gamemode choice [default : $defaultgamemode]:	"
 		read -r gamemode
 
 		if [ "$gamemode" == "" ]
 		then
-			gamemode="murder"
+			gamemode=$defaultgamemode
 		fi
 		
 		if [ $(ls $HOME/steamcmd/gmod/garrysmod/gamemodes | grep -c "^$gamemode\$") -eq 0 ]
@@ -93,27 +98,27 @@ else
 	echo ''
 	
 	case $gamemode in
-        "murder")
-                printf "Number of maximum slots [default : $slotsMurder]:	"
-                read -r slots
+		"murder")
+				printf "Number of maximum slots [default : $slotsMurder]:	"
+				read -r slots
 
 				if [ "$slots" == "" ]
 				then
 					slots=$slotsMurder
 				fi
 
-                echo ''
+				echo ''
 				echo ''
 
 				printf "Starting map [default : $mapMurder]:	"
-                read -r map
+				read -r map
 
 				if [ "$map" == "" ]
 				then
 					map=$mapMurder
 				fi
 
-                echo ''
+				echo ''
 				echo ''
 
 				while [ "$collchoice" = "null" ]
@@ -124,8 +129,8 @@ else
 					then
 						echo ''
 						printf "ID of STEAM Collection [default : $collectionMurder]:	"
-                		read -r collection
-               		elif [ "$collchoice" == "n" ]
+						read -r collection
+					elif [ "$collchoice" == "n" ]
 					then
 						collection="none"
 					else
@@ -141,28 +146,28 @@ else
 				then
 					collection=$collectionMurder
 				fi
-                ;;
-        "slashers")
-                printf "Number of maximum slots [default : $slotsSlashers]:	"
-                read -r slots
+				;;
+		"slashers")
+				printf "Number of maximum slots [default : $slotsSlashers]:	"
+				read -r slots
 
 				if [ "$slots" == "" ]
 				then
 					slots=$slotsSlashers
 				fi
 
-                echo ''
+				echo ''
 				echo ''
 
 				printf "Starting map [default : $mapSlashers]:	"
-                read -r map
+				read -r map
 
 				if [ "$map" == "" ]
 				then
 					map=$mapSlashers
 				fi
 
-                echo ''
+				echo ''
 				echo ''
 
 				while [ "$collchoice" = "null" ]
@@ -173,8 +178,8 @@ else
 					then
 						echo ''
 						printf "ID of STEAM Collection [default : $collectionSlashers]:	"
-                		read -r collection
-               		elif [ "$collchoice" == "n" ]
+						read -r collection
+						elif [ "$collchoice" == "n" ]
 					then
 						collection="none"
 					else
@@ -190,28 +195,28 @@ else
 				then
 					collection=$collectionSlashers
 				fi
-                ;;
-        "extremefootballthrowdown")
-                printf "Number of maximum slots [default : $slotsEFT]:	"
-                read -r slots
+				;;
+		"extremefootballthrowdown")
+				printf "Number of maximum slots [default : $slotsEFT]:	"
+				read -r slots
 
 				if [ "$slots" == "" ]
 				then
 					slots=$slotsEFT
 				fi
 
-                echo ''
+				echo ''
 				echo ''
 
 				printf "Starting map [default : $mapEFT]:	"
-                read -r map
+				read -r map
 
 				if [ "$map" == "" ]
 				then
 					map=$mapEFT
 				fi
 
-                echo ''
+				echo ''
 				echo ''
 
 				while [ "$collchoice" = "null" ]
@@ -222,8 +227,8 @@ else
 					then
 						echo ''
 						printf "ID of STEAM Collection [default : $collectionEFT]:	"
-                		read -r collection
-               		elif [ "$collchoice" == "n" ]
+						read -r collection
+						elif [ "$collchoice" == "n" ]
 					then
 						collection="none"
 					else
@@ -239,28 +244,28 @@ else
 				then
 					collection=$collectionEFT
 				fi
-                ;;
-        "guesswho")
-                printf "Number of maximum slots [default : $slotsGW]:	"
-                read -r slots
+				;;
+		"guesswho")
+				printf "Number of maximum slots [default : $slotsGW]:	"
+				read -r slots
 
 				if [ "$slots" == "" ]
 				then
 					slots=$slotsGW
 				fi
 
-                echo ''
+				echo ''
 				echo ''
 
 				printf "Starting map [default : $mapGW]:	"
-                read -r map
+				read -r map
 
 				if [ "$map" == "" ]
 				then
 					map=$mapGW
 				fi
 
-                echo ''
+				echo ''
 				echo ''
 
 				while [ "$collchoice" = "null" ]
@@ -271,8 +276,8 @@ else
 					then
 						echo ''
 						printf "ID of STEAM Collection [default : $collectionGW]:	"
-                		read -r collection
-               		elif [ "$collchoice" == "n" ]
+					read -r collection
+					elif [ "$collchoice" == "n" ]
 					then
 						collection="none"
 					else
@@ -288,28 +293,28 @@ else
 				then
 					collection=$collectionGW
 				fi
-                ;;
-        "sandbox")
-                printf "Number of maximum slots [default : $slotsSandbox]:	"
-                read -r slots
+				;;
+		"sandbox")
+				printf "Number of maximum slots [default : $slotsSandbox]:	"
+				read -r slots
 
 				if [ "$slots" == "" ]
 				then
 					slots=$slotsSandbox
 				fi
 
-                echo ''
+				echo ''
 				echo ''
 
 				printf "Starting map [default : $mapSandbox]:	"
-                read -r map
+				read -r map
 
 				if [ "$map" == "" ]
 				then
 					map=$mapSandbox
 				fi
 
-                echo ''
+				echo ''
 				echo ''
 
 				while [ "$collchoice" = "null" ]
@@ -320,8 +325,8 @@ else
 					then
 						echo ''
 						printf "ID of STEAM Collection [default : $collectionSandbox]:	"
-                		read -r collection
-               		elif [ "$collchoice" == "n" ]
+						read -r collection
+						elif [ "$collchoice" == "n" ]
 					then
 						collection="none"
 					else
@@ -337,28 +342,28 @@ else
 				then
 					collection=$collectionSandbox
 				fi
-                ;;
-        "terrortown")
-                printf "Number of maximum slots [default : $slotsTTT]:	"
-                read -r slots
+				;;
+		"terrortown")
+				printf "Number of maximum slots [default : $slotsTTT]:	"
+				read -r slots
 
 				if [ "$slots" == "" ]
 				then
 					slots=$slotsTTT
 				fi
 
-                echo ''
+				echo ''
 				echo ''
 
 				printf "Starting map [default : $mapTTT]:	"
-                read -r map
+				read -r map
 
 				if [ "$map" == "" ]
 				then
 					map=$mapTTT
 				fi
 
-                echo ''
+				echo ''
 				echo ''
 
 				while [ "$collchoice" = "null" ]
@@ -369,8 +374,8 @@ else
 					then
 						echo ''
 						printf "ID of STEAM Collection [default : $collectionTTT]:	"
-                		read -r collection
-               		elif [ "$collchoice" == "n" ]
+						read -r collection
+						elif [ "$collchoice" == "n" ]
 					then
 						collection="none"
 					else
@@ -386,10 +391,10 @@ else
 				then
 					collection=$collectionTTT
 				fi
-                ;;
-        *)
-                echo "${RED}This gamemode isn't supported yet.${NC}\n"
-                ;;
+				;;
+		*)
+				echo "${RED}This gamemode isn't supported yet.${NC}\n"
+				;;
 	esac
 
 	clear
