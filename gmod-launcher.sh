@@ -411,7 +411,7 @@ else
 
 	if [ $(screen -ls | grep -c "serveur") -eq 0 ]
 	then
-		printf "${RED}You can't launch GMOD LAUNCHER directly in a screen session${NC}\n"
+		printf "${RED}Your server cannot be launched, an error has occurred${NC}\n"
 	else
 		printf "${GREEN}Your server has been successfully launched${NC}\n"
 		echo ''
