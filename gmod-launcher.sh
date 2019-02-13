@@ -416,6 +416,8 @@ else
 		printf "${GREEN}Your server has been successfully launched${NC}\n"
 		echo ''
 		printf "To access your server console type : screen -x\n"
+		echo ''
+		printf "To kill your server(s) : killall screen\n"
 	fi
 	echo ''
 	echo ''
