@@ -6,7 +6,7 @@ GMOD-Launcher is a bash script that permit to quickly create a Garry's Mod serve
 
 * Dedicated Server using UNIX OS
 * Default steamcmd folder at the root of the user home
-* Garry's Mod Gamemodes downloaded and already install in the following folder : 
+* Garry's Mod Gamemodes downloaded and already installed in the following folder : 
 ```
 $HOME/steamcmd/gmod/garrysmod/gamemodes
 ```
