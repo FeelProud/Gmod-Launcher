@@ -33,7 +33,7 @@ authkey="YOUR API STEAM KEY"
 ```
 ### 2) Set your default configuration
 
-Every gamemode has his own default configuration like the following :
+Every gamemode has his own default configuration in the file "gmod-launcher.sh" like the following :
 ```
 ####### [GAMEMODENAME] Config ################################################
 
