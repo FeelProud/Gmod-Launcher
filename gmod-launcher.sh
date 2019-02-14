@@ -10,6 +10,12 @@ authkey=""
 
 defaultgamemode="sandbox"
 
+####### Not Supported Gamemodes Config ################################
+
+slotsDefault="16"
+mapDefault="gm_flatgrass"
+collectionDefault=""
+
 ####### Murder Config ################################################
 
 slotsMurder="16"
@@ -48,16 +54,23 @@ collectionTTT="1651595514"
 
 ######################################################################
 
+RED='\033[0;31m'
+GREEN='\033[0;42m'
+YELLOW='\033[01;33m'
+NC='\033[0m'
+
 clear
 
+
 ## Check if we are in a screen session
-if [ $(echo $STY | grep -c "serveur") -eq 1 ]
+if [ $(screen -ls | grep -c "There is a screen") -eq 1 ]
 then
-	printf "${RED}You can't launch GMOD LAUNCHER directly in a screen session${NC}\n"
+	printf "${RED}A screen (server?) is already running${NC}\n"
+	echo ''
+	echo 'To check it type : screen -ls'
+	echo 'To kill screens, type : killall screen'
+	echo ''
 else
-	RED='\033[0;31m'
-	GREEN='\033[0;42m'
-	NC='\033[0m'
 	gamemode='null'
 	collchoice="null"
 
@@ -393,7 +406,55 @@ else
 				fi
 				;;
 		*)
-				echo "${RED}This gamemode isn't supported yet.${NC}\n"
+				printf "${YELLOW}WARNING : Gamemode not supported yet. Default standard value are being proposed${NC}\n"
+				echo ''
+				printf "Number of maximum slots [default : $slotsDefault]:	"
+				read -r slots
+
+				if [ "$slots" == "" ]
+				then
+					slots=$slotsDefault
+				fi
+
+				echo ''
+				echo ''
+
+				printf "Starting map [default : $mapDefault]:	"
+				read -r map
+
+				if [ "$map" == "" ]
+				then
+					map=$mapDefault
+				fi
+
+				echo ''
+				echo ''
+
+				while [ "$collchoice" = "null" ]
+				do
+					printf "Do you want to use a STEAM Collection (y/n) [default : n]:	"
+					read -r collchoice
+					if [ "$collchoice" == "y" ]
+					then
+						echo ''
+						printf "ID of STEAM Collection [default : $collectionDefault]:	"
+						read -r collection
+					elif [ "$collchoice" == "n" ] || [ "$collchoice" == "" ]
+					then
+						collection="none"
+					else
+						collchoice="null"
+						printf "${RED}Your choice isn't right${NC}\n"
+						echo ''
+						read -p "Press any key to continue"
+						echo ''
+					fi
+				done
+
+				if [ "$collection" == "" ]
+				then
+					collection=$collectionDefault
+				fi
 				;;
 	esac
 
