@@ -123,14 +123,14 @@ else
 
 				while [ "$collchoice" = "null" ]
 				do
-					printf "Do you want to use a STEAM Collection (y/n) [default : y]:	"
+					printf "Do you want to use a STEAM Collection (y/n) [default : n]:	"
 					read -r collchoice
-					if [ "$collchoice" == "y" ] || [ "$collchoice" == "" ]
+					if [ "$collchoice" == "y" ]
 					then
 						echo ''
 						printf "ID of STEAM Collection [default : $collectionMurder]:	"
 						read -r collection
-					elif [ "$collchoice" == "n" ]
+					elif [ "$collchoice" == "n" ] || [ "$collchoice" == "" ]
 					then
 						collection="none"
 					else
@@ -172,14 +172,14 @@ else
 
 				while [ "$collchoice" = "null" ]
 				do
-					printf "Do you want to use a STEAM Collection (y/n) [default : y]:	"
+					printf "Do you want to use a STEAM Collection (y/n) [default : n]:	"
 					read -r collchoice
-					if [ "$collchoice" == "y" ] || [ "$collchoice" == "" ]
+					if [ "$collchoice" == "y" ]
 					then
 						echo ''
 						printf "ID of STEAM Collection [default : $collectionSlashers]:	"
 						read -r collection
-						elif [ "$collchoice" == "n" ]
+					elif [ "$collchoice" == "n" ] || [ "$collchoice" == "" ]
 					then
 						collection="none"
 					else
@@ -221,14 +221,14 @@ else
 
 				while [ "$collchoice" = "null" ]
 				do
-					printf "Do you want to use a STEAM Collection (y/n) [default : y]:	"
+					printf "Do you want to use a STEAM Collection (y/n) [default : n]:	"
 					read -r collchoice
-					if [ "$collchoice" == "y" ] || [ "$collchoice" == "" ]
+					if [ "$collchoice" == "y" ]
 					then
 						echo ''
 						printf "ID of STEAM Collection [default : $collectionEFT]:	"
 						read -r collection
-						elif [ "$collchoice" == "n" ]
+					elif [ "$collchoice" == "n" ] || [ "$collchoice" == "" ]
 					then
 						collection="none"
 					else
@@ -270,14 +270,14 @@ else
 
 				while [ "$collchoice" = "null" ]
 				do
-					printf "Do you want to use a STEAM Collection (y/n) [default : y]:	"
+					printf "Do you want to use a STEAM Collection (y/n) [default : n]:	"
 					read -r collchoice
-					if [ "$collchoice" == "y" ] || [ "$collchoice" == "" ]
+					if [ "$collchoice" == "y" ]
 					then
 						echo ''
 						printf "ID of STEAM Collection [default : $collectionGW]:	"
 					read -r collection
-					elif [ "$collchoice" == "n" ]
+					elif [ "$collchoice" == "n" ] || [ "$collchoice" == "" ]
 					then
 						collection="none"
 					else
@@ -319,14 +319,14 @@ else
 
 				while [ "$collchoice" = "null" ]
 				do
-					printf "Do you want to use a STEAM Collection (y/n) [default : y]:	"
+					printf "Do you want to use a STEAM Collection (y/n) [default : n]:	"
 					read -r collchoice
-					if [ "$collchoice" == "y" ] || [ "$collchoice" == "" ]
+					if [ "$collchoice" == "y" ]
 					then
 						echo ''
 						printf "ID of STEAM Collection [default : $collectionSandbox]:	"
 						read -r collection
-						elif [ "$collchoice" == "n" ]
+					elif [ "$collchoice" == "n" ] || [ "$collchoice" == "" ]
 					then
 						collection="none"
 					else
@@ -368,14 +368,14 @@ else
 
 				while [ "$collchoice" = "null" ]
 				do
-					printf "Do you want to use a STEAM Collection (y/n) [default : y]:	"
+					printf "Do you want to use a STEAM Collection (y/n) [default : n]:	"
 					read -r collchoice
-					if [ "$collchoice" == "y" ] || [ "$collchoice" == "" ]
+					if [ "$collchoice" == "y" ]
 					then
 						echo ''
 						printf "ID of STEAM Collection [default : $collectionTTT]:	"
 						read -r collection
-						elif [ "$collchoice" == "n" ]
+					elif [ "$collchoice" == "n" ] || [ "$collchoice" == "" ]
 					then
 						collection="none"
 					else
