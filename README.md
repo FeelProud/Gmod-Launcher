@@ -10,7 +10,7 @@ GMOD-Launcher is a bash script that permit to quickly create a Garry's Mod serve
 ```
 $HOME/steamcmd/gmod/garrysmod/gamemodes
 ```
-* Gamemodes folders need to be correctly spelled, as the original release.
+* To use implemented gamemodes configuration, folders need to be correctly spelled, as the original release of the gamemode author.
 
 
 
@@ -33,7 +33,7 @@ authkey="YOUR API STEAM KEY"
 ```
 ### 2) Set your default configuration
 
-Every gamemode has his own default configuration in the file "gmod-launcher.sh" like the following :
+Implemented gamemodes have their default configuration in the file "gmod-launcher.sh" like the following :
 ```
 ####### [GAMEMODENAME] Config ################################################
 
@@ -42,7 +42,7 @@ map="default_map"
 collection="CollectionID"
 ```
 
-You are free to change the default configuration for every gamemodes.
+You are free to change the default configuration for every implemented gamemodes.
 
 ### 3) Launch the script on your server
 
@@ -50,6 +50,10 @@ You can now launch the script on your server, GMOD-Launcher will simplify the cr
 
 
 ## Supported Gamemodes
+
+* All gamemodes are supported
+
+## Gamemodes with customizable default settings
 
 * Murder
 * Slashers
